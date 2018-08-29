@@ -1,15 +1,15 @@
 This is an example app focusing on fetching data from a remote API.
 
-##Framework
+## Framework
 - ReactJS
 
-##Api Used
+## Api Used
 - [NEWS Api](https://newsapi.org/) with key.
 
-###Data to fetch
+### Data to fetch
 1. Latest Headlines w/ articles, publish date, publisher & images.
 
 
-##Method
+## Method
 - [Fetch API]()
 
