@@ -18,60 +18,63 @@ This is an example app focusing on fetching data from a remote API.
 ## Method
 - [Fetch API]()
 
-## Coding techniques
-- fetch()
+## Fetching withing componentDidMount() lifecycle method
+- newsArticle.container.js
 ``` javascript
-fetch(`${ base_url }${ type }${ country }&apiKey=${ api_key }`)
-  
-.then(results => {
-  return results.json();
-})
+componentDidMount() {
 
-.then(data => {
-
-  let id = 0;
-
-  let headlines = data.articles.map((result) => {
-    const { 
-      author, 
-      description, 
-      publishedAt, 
-      source, 
-      title, 
-      urlToImage } = result;
-
-      let displayAuthor;
-      if (result.author != null) {
-        displayAuthor = true;
-      } else {
-        displayAuthor = false;
-      }
-
-      let displayImage;
-      if (result.urlToImage != null) {
-        displayImage = true;
-      } else {
-        displayImage = false;
-      }
-
-      return(
-        <Article
-          key={ id++ }
-          author={ author }
-          authorExists={ displayAuthor }
-          description={ description }
-          image={ urlToImage }
-          imageExits={ displayImage }
-          publishedAt={ publishedAt}
-          source={ source.name }
-          title={ title } />
-      )
-    })
-
-    this.setState({
-      headlines: headlines
-    })
+  fetch(`${ base_url }${ type }${ country }&apiKey=${ api_key }`)
+    
+  .then(results => {
+    return results.json();
   })
+
+  .then(data => {
+
+    let id = 0;
+
+    let headlines = data.articles.map((result) => {
+      const { 
+        author, 
+        description, 
+        publishedAt, 
+        source, 
+        title, 
+        urlToImage } = result;
+
+        let displayAuthor;
+        if (result.author != null) {
+          displayAuthor = true;
+        } else {
+          displayAuthor = false;
+        }
+
+        let displayImage;
+        if (result.urlToImage != null) {
+          displayImage = true;
+        } else {
+          displayImage = false;
+        }
+
+        return(
+          <Article
+            key={ id++ }
+            author={ author }
+            authorExists={ displayAuthor }
+            description={ description }
+            image={ urlToImage }
+            imageExits={ displayImage }
+            publishedAt={ publishedAt}
+            source={ source.name }
+            title={ title } />
+        )
+      })
+
+      this.setState({
+        headlines: headlines
+      })
+    })
+  }
 }
 ```
 
