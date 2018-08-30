@@ -146,9 +146,7 @@ const {
   publishedAt,
   source,
   title } = props;
-```
-
-``` javascript
+  
 const { 
   author, 
   description, 
@@ -162,6 +160,7 @@ const {
 // - - - - - - - - - - - - - 
 // CSS in JS using emotion.js
 // - - - - - - - - - - - - - 
+
 const article_style = css`
   border: 1px solid rgba(0,0,0,0.2);
   margin-bottom: 2rem;
