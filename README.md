@@ -21,7 +21,9 @@ This is an example app focusing on fetching data from a remote API.
 ## Coding techniques
 - ES6 Destructuring 
 
-``` newsArticles.container.js
+``` 
+newsArticles.container.js
+
 const { 
   author, 
   authorExists,
@@ -33,7 +35,9 @@ const {
   title } = props;
 ```
 
-``` article.component.js
+``` 
+article.component.js
+
 const { 
   author, 
   description, 
