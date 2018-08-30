@@ -20,7 +20,7 @@ This is an example app focusing on fetching data from a remote API.
 
 ## Coding techniques
 - fetch()
-```
+``` javascript
 fetch(`${ base_url }${ type }${ country }&apiKey=${ api_key }`)
   
 .then(results => {
@@ -77,7 +77,7 @@ fetch(`${ base_url }${ type }${ country }&apiKey=${ api_key }`)
 
 - ES6 Destructuring 
 
-``` // newsArticles.container.js
+``` javascript
 const { 
   author, 
   authorExists,
@@ -89,7 +89,7 @@ const {
   title } = props;
 ```
 
-``` // article.component.js
+``` javascript
 const { 
   author, 
   description, 
