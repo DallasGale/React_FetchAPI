@@ -87,12 +87,11 @@ componentDidMount() {
     })
 }
 ```
-``` html
-<!-- Styled Component -->
-article.compoennt.js 
-```
-``` javascript 
-<!-- article.compoennt.js  -->
+``` javascript
+<!-- 
+  Styled component that handles the visual nature of the article
+  -- article.component.js 
+-->
 <article className={ article_style }>
   <div className={ details_style }>
 
