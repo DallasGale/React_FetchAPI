@@ -88,11 +88,12 @@ componentDidMount() {
 }
 ```
 ``` javascript
-// - - - - - - - - - - - - - - - - - - - - - - - - -  - - - - - - -
+// - - - - - - - - - - - - - - - - - - - - - - - - -  - - - - - -
 // Styled component that handles the visual nature of the article
 //
 // article.component.js 
 // - - - - - - - - - - -
+
 <article className={ article_style }>
   <div className={ details_style }>
 
@@ -132,9 +133,10 @@ componentDidMount() {
 ## Coding methods/techniques
 
 ``` javascript
-// - - - - - - - - - - - - - 
+// - - - - - - - - -
 // ES6 Destructuring
-// - - - - - - - - - - - - - 
+// - - - - - - - - -
+
 const { 
   author, 
   authorExists,
