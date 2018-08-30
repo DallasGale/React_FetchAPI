@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
-import NewsHeadlines from './containers/newsApi';
+import NewsArticles from './containers/newsArticles.container';
 import './App.css';
 
 class App extends Component {
@@ -12,7 +12,7 @@ class App extends Component {
           <h1 className="App-title">Fetching NewsAPI.org data</h1>
         </header>
        
-       <NewsHeadlines />
+       <NewsArticles />
       </div>
     );
   }
