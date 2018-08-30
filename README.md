@@ -19,11 +19,12 @@ This is an example app focusing on fetching data from a remote API.
 - [Fetch API]()
 
 # Containers + Components
-``` html
-<!-- Smart Container -->
-newsArticle.container.js 
-```
 ``` javascript
+<!-- 
+  Smart container that handles fetching and maping of data
+  -- newsArticle.container.js 
+-->
+
 componentDidMount() {
 
   // 1. fetch() the url/endpoint
@@ -91,6 +92,7 @@ componentDidMount() {
 article.compoennt.js 
 ```
 ``` javascript 
+<!-- article.compoennt.js  -->
 <article className={ article_style }>
   <div className={ details_style }>
 
