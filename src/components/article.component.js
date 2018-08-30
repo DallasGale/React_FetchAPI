@@ -13,7 +13,8 @@ const Article = (props) => {
     imageExits,
     publishedAt,
     source,
-    title } = props;
+    title,
+    url } = props;
 
   return (
     <article className={ article_style }>
@@ -42,7 +43,9 @@ const Article = (props) => {
 
       {/* Title */}
       <h3 className={ title_style }>
+        <a className={ link_style } target="_blank" href={ url }>
         { title }
+        </a>
       </h3>
 
       {/* Description */}
@@ -74,6 +77,11 @@ const article_style = css`
   margin-bottom: 2rem;
   padding: 1rem;
   text-align: left;
+  transition: background 0.3s;
+  &:hover {
+    transition: background 0.1s;
+    background: rgba(0,0,0,0.02);
+  }
 `;
 const author_style = css``;
 const description_style = css`
@@ -87,11 +95,25 @@ const details_style = css`
   padding: 10px;
   width: auto;
 `;
+const hidden_style = css`display: none;`;
 const image_style = css`
   width: 100%;
+  overflow: hidden;  
+  transition: transform 0.3s;
+  &:hover {
+    transition: transform 0.3s;
+    transform: scale(1.012);
+  }
 `;
-
-const hidden_style = css`display: none;`;
+const link_style = css`
+  color: black;
+  font-weight: bold;
+  transition: color 0.3s;
+  &:hover {
+    color: orange;
+    transition: color 0.1s;
+  }
+`;
 const published_style = css`
   font-size: 0.5rem;
 `;

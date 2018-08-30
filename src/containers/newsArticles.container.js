@@ -22,31 +22,28 @@ class NewsArticles extends Component {
   // - - - - - - - - - - - - - - - - - -
   componentDidMount() {
 
-    // 1. fetch() the url/endpoint
-    fetch(`${ base_url }${ type }${ country }&apiKey=${ api_key }`)
-      
-    // 2. .then return a PROMISE of JSON data
+    fetch(`${ base_url }${ type }${ country }&apiKey=${ api_key }`)  
+
     .then(results => {
       return results.json();
     })
-    
-    // 3. .then return the json when it has RESOLVED
+
     .then(data => {
 
-      // Key
-      let id = 0;
+      let id = 0; // key
 
-      // 4. return HTML to headline array
+      // map
       let headlines = data.articles.map((result) => {
+
         const { 
           author, 
           description, 
           publishedAt, 
           source, 
           title, 
+          url,
           urlToImage } = result;
       
-          // Handle empty values
           let displayAuthor;
           if (result.author != null) {
             displayAuthor = true;
@@ -70,15 +67,14 @@ class NewsArticles extends Component {
               imageExits={ displayImage }
               publishedAt={ publishedAt}
               source={ source.name }
-              title={ title } />
+              title={ title }
+              url={ url } />
           )
         })
 
-        // 5. REACT: Set State 
         this.setState({
           headlines: headlines
         })
-        console.log("state: ", this.state.headlines);
       })
   }
 
@@ -89,7 +85,9 @@ class NewsArticles extends Component {
           Top Headlines from { country.toUpperCase() }
         </h2>
         <div className={ container_style }>
-          { this.state.headlines }
+          <section className={ grid_style }>
+            { this.state.headlines }
+          </section>
         </div>
       </div>
     );
@@ -106,9 +104,15 @@ export default NewsArticles;
 // CSS
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 const container_style = css`
-  max-width: 400px;
   margin: 0 auto;
   padding: 1rem;
+`;
+
+const grid_style = css`
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-row-gap: 2rem;
+  grid-column-gap:  2rem;
 `;
 
 // - - - - - - - - - - - - - - - - - - - - - - - - -
