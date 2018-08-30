@@ -21,25 +21,25 @@ This is an example app focusing on fetching data from a remote API.
 ## Coding techniques
 - fetch()
 ```
-// 1. fetch() the url/endpoint
 fetch(`${ base_url }${ type }${ country }&apiKey=${ api_key }`)
   
-  // 2. .then return a PROMISE of JSON data
-  .then(results => {
-    return results.json();
-  })
-  
-  // 3. .then return the json when it has RESOLVED
-  .then(data => {
+.then(results => {
+  return results.json();
+})
 
-    // Key
-    let id = 0;
+.then(data => {
 
-    // 4. return HTML to headline array
-    let headlines = data.articles.map((result) => {
-      const { author, description, title, publishedAt, source, urlToImage } = result;
-    
-      // Handle empty values
+  let id = 0;
+
+  let headlines = data.articles.map((result) => {
+    const { 
+      author, 
+      description, 
+      publishedAt, 
+      source, 
+      title, 
+      urlToImage } = result;
+
       let displayAuthor;
       if (result.author != null) {
         displayAuthor = true;
@@ -53,6 +53,7 @@ fetch(`${ base_url }${ type }${ country }&apiKey=${ api_key }`)
       } else {
         displayImage = false;
       }
+
       return(
         <Article
           key={ id++ }
@@ -67,7 +68,6 @@ fetch(`${ base_url }${ type }${ country }&apiKey=${ api_key }`)
       )
     })
 
-    // 5. REACT: Set State 
     this.setState({
       headlines: headlines
     })
@@ -77,8 +77,7 @@ fetch(`${ base_url }${ type }${ country }&apiKey=${ api_key }`)
 
 - ES6 Destructuring 
 
-``` 
-// newsArticles.container.js
+``` // newsArticles.container.js
 const { 
   author, 
   authorExists,
@@ -90,8 +89,7 @@ const {
   title } = props;
 ```
 
-``` 
-// article.component.js
+``` // article.component.js
 const { 
   author, 
   description, 

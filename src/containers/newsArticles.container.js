@@ -25,22 +25,27 @@ class NewsArticles extends Component {
     // 1. fetch() the url/endpoint
     fetch(`${ base_url }${ type }${ country }&apiKey=${ api_key }`)
       
-      // 2. .then return a PROMISE of JSON data
-      .then(results => {
-        return results.json();
-      })
+    // 2. .then return a PROMISE of JSON data
+    .then(results => {
+      return results.json();
+    })
+    
+    // 3. .then return the json when it has RESOLVED
+    .then(data => {
+
+      // Key
+      let id = 0;
+
+      // 4. return HTML to headline array
+      let headlines = data.articles.map((result) => {
+        const { 
+          author, 
+          description, 
+          publishedAt, 
+          source, 
+          title, 
+          urlToImage } = result;
       
-      // 3. .then return the json when it has RESOLVED
-      .then(data => {
-
-
-        // Key
-        let id = 0;
-
-        // 4. return HTML to headline array
-        let headlines = data.articles.map((result) => {
-          const { author, description, title, publishedAt, source, urlToImage } = result;
-        
           // Handle empty values
           let displayAuthor;
           if (result.author != null) {
@@ -55,10 +60,7 @@ class NewsArticles extends Component {
           } else {
             displayImage = false;
           }
-
-
           return(
-
             <Article
               key={ id++ }
               author={ author }
@@ -69,7 +71,6 @@ class NewsArticles extends Component {
               publishedAt={ publishedAt}
               source={ source.name }
               title={ title } />
-              
           )
         })
 
@@ -78,7 +79,6 @@ class NewsArticles extends Component {
           headlines: headlines
         })
         console.log("state: ", this.state.headlines);
-
       })
   }
 
