@@ -18,10 +18,11 @@ This is an example app focusing on fetching data from a remote API.
 ## Method
 - [Fetch API]()
 
-# Seperate styled & smart components into Containers + Components
-##  newsArticle.container.js (smart)
-### Fetching within componentDidMount() lifecycle method
-
+# Containers + Components
+``` html
+<!-- Smart Container -->
+newsArticle.container.js 
+```
 ``` javascript
 componentDidMount() {
 
@@ -84,11 +85,11 @@ componentDidMount() {
       console.log("state: ", this.state.headlines);
     })
 }
-
-
 ```
-##  article.component.js (styled)
-### Using CSS in JS styles (emotion)
+``` html
+<!-- Styled Component -->
+article.compoennt.js 
+```
 ``` javascript 
 <article className={ article_style }>
   <div className={ details_style }>
