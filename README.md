@@ -88,13 +88,11 @@ componentDidMount() {
 }
 ```
 ``` javascript
-// - - - - - - - - - - - - -  
-// Styled component that 
-// handles the visual nature 
-// of the article
+// - - - - - - - - - - - - - - - - - - - - - - - - -  - - - - - - -
+// Styled component that handles the visual nature of the article
 //
 // article.component.js 
-// - - - - - - - - - - - - - 
+// - - - - - - - - - - -
 <article className={ article_style }>
   <div className={ details_style }>
 
