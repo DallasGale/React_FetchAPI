@@ -88,10 +88,13 @@ componentDidMount() {
 }
 ```
 ``` javascript
-<!-- 
-  Styled component that handles the visual nature of the article
-  -- article.component.js 
--->
+// - - - - - - - - - - - - -  
+// Styled component that 
+// handles the visual nature 
+// of the article
+//
+// article.component.js 
+// - - - - - - - - - - - - - 
 <article className={ article_style }>
   <div className={ details_style }>
 
@@ -126,12 +129,14 @@ componentDidMount() {
     { description }
   </p>
 </article>
-
-
 ```
-- ES6 Destructuring 
+
+## Coding methods/techniques
 
 ``` javascript
+// - - - - - - - - - - - - - 
+// ES6 Destructuring
+// - - - - - - - - - - - - - 
 const { 
   author, 
   authorExists,
@@ -151,4 +156,42 @@ const {
   publishedAt, 
   source, 
   urlToImage } = result;
+```
+
+```javascript
+// - - - - - - - - - - - - - 
+// CSS in JS using emotion.js
+// - - - - - - - - - - - - - 
+const article_style = css`
+  border: 1px solid rgba(0,0,0,0.2);
+  margin-bottom: 2rem;
+  padding: 1rem;
+  text-align: left;
+`;
+const author_style = css``;
+const description_style = css`
+  color: rgba(0,0,0,0.5);
+  font-size: 0.7rem;
+`;
+const details_style = css`
+  background: rgba(0,0,0,0.05);
+  font-size: 0.5rem;
+  display: block;
+  padding: 10px;
+  width: auto;
+`;
+const image_style = css`
+  width: 100%;
+`;
+
+const hidden_style = css`display: none;`;
+const published_style = css`
+  font-size: 0.5rem;
+`;
+const source_style = css``;
+const title_style = css`
+  font-size: 1rem;
+  font-weight: 500;
+`;
+
 ```
